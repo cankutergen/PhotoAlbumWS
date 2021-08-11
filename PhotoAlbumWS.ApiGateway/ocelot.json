@@ -1,0 +1,131 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/album/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6000
+        }
+      ],
+      "UpstreamPathTemplate": "/album/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "SwaggerKey": "Albums"
+    },
+    {
+      "DownstreamPathTemplate": "/api/album",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6000
+        }
+      ],
+      "UpstreamPathTemplate": "/album",
+      "UpstreamHttpMethod": [ "Post", "Get" ],
+      "SwaggerKey": "Albums"
+    },
+    {
+      "DownstreamPathTemplate": "/api/album/GetAlbumsByUserId/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6000
+        }
+      ],
+      "UpstreamPathTemplate": "/album/GetAlbumsByUserId/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "Albums"
+    },
+    {
+      "DownstreamPathTemplate": "/api/photo/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/photo/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "Photos"
+    },
+    {
+      "DownstreamPathTemplate": "/api/photo/GetPhotosByAlbumId/{albumId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7000
+        }
+      ],
+      "UpstreamPathTemplate": "/photo/GetPhotosByAlbumId/{albumId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "Photos"
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8000
+        }
+      ],
+      "UpstreamPathTemplate": "/user/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "Users"
+    },
+    {
+      "DownstreamPathTemplate": "/api/user",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8000
+        }
+      ],
+      "UpstreamPathTemplate": "/user",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "Users"
+    }
+  ],
+
+  "SwaggerEndPoints": [
+    {
+      "Key": "Albums",
+      "Config": [
+        {
+          "Name": "Albums API",
+          "Version": "v1",
+          "Url": "https://localhost:44332/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Photos",
+      "Config": [
+        {
+          "Name": "Photos API",
+          "Version": "v1",
+          "Url": "https://localhost:44324/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Users",
+      "Config": [
+        {
+          "Name": "Users API",
+          "Version": "v1",
+          "Url": "https://localhost:44363/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost"
+  }
+}
