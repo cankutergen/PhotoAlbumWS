@@ -37,7 +37,7 @@ namespace Microservices.Photos.Api.Controllers
                     photosByAlbumId = await _mediator.Send(new GetPhotosByAlbumIdQuery(albumId));
                 }
 
-                return Ok(photosByAlbumId);
+                return new JsonResult(photosByAlbumId);
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace Microservices.Photos.Api.Controllers
             try
             {
                 var photo = await _mediator.Send(new GetPhotoByIdQuery(id));
-                return Ok(photo);
+                return new JsonResult(photo);
             }
             catch (Exception ex)
             {

@@ -27,7 +27,7 @@
       "SwaggerKey": "Albums"
     },
     {
-      "DownstreamPathTemplate": "/api/album/GetAlbumsByUserId/{id}",
+      "DownstreamPathTemplate": "/api/album/GetAlbumsByUserId/{userId}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -35,7 +35,7 @@
           "Port": 6000
         }
       ],
-      "UpstreamPathTemplate": "/album/GetAlbumsByUserId/{id}",
+      "UpstreamPathTemplate": "/album/GetAlbumsByUserId/{userId}",
       "UpstreamHttpMethod": [ "Get" ],
       "SwaggerKey": "Albums"
     },

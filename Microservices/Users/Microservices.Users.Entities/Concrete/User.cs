@@ -8,6 +8,8 @@ namespace Microservices.Users.Entities.Concrete
     {
         public int Id { get; set; }
 
+        public string Name { get; set; }
+
         public string UserName { get; set; }
 
         public Address Address { get; set; }

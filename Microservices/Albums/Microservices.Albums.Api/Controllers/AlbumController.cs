@@ -39,7 +39,7 @@ namespace Microservices.Albums.Api.Controllers
                     albums = await _mediator.Send(new GetAllAlbumsQuery());
                 }
  
-                return Ok(albums);
+                return new JsonResult(albums);
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace Microservices.Albums.Api.Controllers
                     albumsByUserId = await _mediator.Send(new GetAlbumsByUserIdQuery(userId));
                 }
 
-                return Ok(albumsByUserId);
+                return new JsonResult(albumsByUserId);
             }
             catch (Exception ex)
             {
@@ -75,7 +75,7 @@ namespace Microservices.Albums.Api.Controllers
             try
             {
                 var album = await _mediator.Send(new GetAlbumByIdQuery(id));
-                return Ok(album);
+                return new JsonResult(album);
             }
             catch (Exception ex) 
             {
@@ -96,7 +96,7 @@ namespace Microservices.Albums.Api.Controllers
                 };
 
                 var newAlbum = await _mediator.Send(command);
-                return Ok(newAlbum);
+                return new JsonResult(newAlbum);
             }
             catch (Exception ex)
             {
@@ -118,7 +118,7 @@ namespace Microservices.Albums.Api.Controllers
                 };
 
                 var updatedAlbum = await _mediator.Send(command);
-                return Ok(updatedAlbum);
+                return new JsonResult(updatedAlbum);
             }
             catch (Exception ex)
             {
@@ -133,7 +133,7 @@ namespace Microservices.Albums.Api.Controllers
             try
             {
                 var result = await _mediator.Send(new DeleteAlbumCommand(id));
-                return Ok(result);
+                return new JsonResult(result);
             }
             catch (Exception ex)
             {

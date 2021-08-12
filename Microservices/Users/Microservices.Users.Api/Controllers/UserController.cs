@@ -37,7 +37,7 @@ namespace Microservices.Users.Api.Controllers
                     allUsers = await _mediator.Send(new GetAllUsersQuery());
                 }
 
-                return Ok(allUsers);
+                return new JsonResult(allUsers);
             }
             catch (Exception ex)
             {
@@ -52,7 +52,7 @@ namespace Microservices.Users.Api.Controllers
             try
             {
                 var user = await _mediator.Send(new GetUserByIdQuery(id));
-                return Ok(user);
+                return new JsonResult(user);
             }
             catch (Exception ex) 
             {
